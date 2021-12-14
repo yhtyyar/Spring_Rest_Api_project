@@ -19,32 +19,35 @@ public class EventRestControllerV1 {
 
 
     @PostMapping
-    @PreAuthorize("hasAnyAuthority('users:write')")
+    @PreAuthorize("hasAnyAuthority('events:write')")
     public Event create(@RequestBody @NonNull Event event) {
         return eventService.create(event);
     }
 
 
     @PutMapping
-    @PreAuthorize("hasAnyAuthority('users:write')")
+    @PreAuthorize("hasAnyAuthority('events:write')")
     public Event update(@RequestBody @NonNull Event event) {
         return eventService.update(event);
     }
 
 
     @GetMapping
+    @PreAuthorize("hasAnyAuthority('events:read')")
     public List<Event> getAll() {
         return eventService.getAll();
     }
 
+
     @GetMapping("/{id}")
-    @PreAuthorize("hasAnyAuthority('users:read')")
+    @PreAuthorize("hasAnyAuthority('events:read')")
     public Event get(@PathVariable("id") Long id) {
         return eventService.getById(id);
     }
 
+
     @DeleteMapping("/{id}")
-    @PreAuthorize("hasAnyAuthority('users:write')")
+    @PreAuthorize("hasAnyAuthority('events:write')")
     public void delete(@PathVariable("id") Long id) {
         eventService.deleteById(id);
     }

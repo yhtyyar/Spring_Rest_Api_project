@@ -3,7 +3,13 @@ package com.example.Spring_Rest_Api_project.model;
 public enum Permission {
 
     USERS_READ("users:read"),
-    USERS_WRITE("users:write");
+    USERS_WRITE("users:write"),
+
+    EVENT_READ("events:read"),
+    EVENT_WRITE("events:write"),
+
+    FILE_READ("files:read"),
+    FILE_WRITE("files:write");
 
 
     private final String permission;

@@ -18,4 +18,5 @@ public class AuthController {
     public String getSuccessPage() {
         return "success";
     }
+
 }
